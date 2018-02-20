@@ -1,0 +1,7 @@
+<App Model="State/MainState">
+	<StackPanel>
+		<Each Items="{diceSets}">
+			<DiceSet/>
+		</Each>
+	</StackPanel>
+</App>

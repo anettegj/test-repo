@@ -1,0 +1,24 @@
+<Panel ux:Class="DiceSet">
+	<StackPanel Orientation="Horizontal">
+		<Each Items="{dice}">
+			<StackPanel Padding="5" ItemSpacing="10" Margin="10,0">
+				<Rectangle StrokeColor="#000" StrokeWidth="2" CornerRadius="2" Color="{color}" Width="60" Height="60" Margin="10">
+					<Circle StrokeColor="#000" StrokeWidth="1" Color="#CCC" Alignment="TopRight" Margin="5" Padding="5">
+						<Text Value="{numSides}" TextColor="#000" />
+					</Circle>
+				</Rectangle>
+				<Text Value="{name} #{numSides}" TextWrapping="Wrap" MaxWidth="80"/>
+			</StackPanel>
+		</Each>
+
+		<WhileTrue Value="{modifier} > 0">
+			<Text Alignment="Center" Value="+{modifier}" TextColor="#080" FontSize="32"/>
+		</WhileTrue>
+		<WhileTrue Value="{modifier} < 0">
+			<Text Alignment="Center" Value="{modifier}" TextColor="#800" FontSize="32"/>
+		</WhileTrue>
+		<WhileTrue Value="{modifier} == 0">
+			<Text Alignment="Center" Value="{modifier}" TextColor="#000" FontSize="32"/>
+		</WhileTrue>
+	</StackPanel>
+</Panel>
