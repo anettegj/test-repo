@@ -11,7 +11,9 @@ class Die {
 	}
 
 	get expectedValue() {
-		EV = value_of_side * chance_of_side
+		var sum = 0
+		this.sides.forEach((side) => {sum += side})
+		return sum / this.sides.length
 	}
 }
 
@@ -30,7 +32,10 @@ class DiceSet {
 	}
 
 	get expectedValue() {
-
+		var sum = 0
+		this.dice.forEach((die) => {sum += die.expectedValue})
+		sum += this.modifier
+		return sum
 	}
 }
 

@@ -20,5 +20,7 @@
 		<WhileTrue Value="{modifier} == 0">
 			<Text Alignment="Center" Value="{modifier}" TextColor="#000" FontSize="32"/>
 		</WhileTrue>
+
+		<Text Value="{expectedValue}" FontSize="32" />
 	</StackPanel>
 </Panel>
